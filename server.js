@@ -8,10 +8,3 @@ server.use(router);
 server.listen(666, () => {
   console.log("JSON Server is running");
 });
-server.use(jsonServer.bodyParser);
-server.use((req, res, next) => {
-  if (req.method === "POST") {
-    req.body.createdAt = Date.now();
-  }
-  next();
-});
